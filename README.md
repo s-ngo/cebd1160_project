@@ -18,7 +18,7 @@ Your repository should include the following:
 
 ## Research Question
 
-Based off the Boston Dataset , can we use machine learning to predict the price of value of a given house?
+Based off the Boston Dataset, can we use machine learning to predict the value of a given house?
 
 ### Abstract
 
