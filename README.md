@@ -31,14 +31,15 @@ resolution (what did we end up producing)
 
 ### Introduction
 
-Brief (no more than 1-2 paragraph) description about the dataset. Can copy from elsewhere, but cite the source (i.e. at least link, and explicitly say if it's copied from elsewhere).
+The dataset for this project originates from the UCI Machine Learning Repository. The Boston housing data was collected in 1978 and each of the 506 entries represent aggregated data about 14 features for homes from various suburbs in Boston, Massachusetts. (https://www.ritchieng.com/machine-learning-project-boston-home-prices/)
 
 ### Methods
 
 Brief (no more than 1-2 paragraph) description about how you decided to approach solving it. Include:
-
 pseudocode for this method (either created by you or cited from somewhere else)
 why you chose this method
+
+I chose Mean Squared Error as the most appropriate performance metric for predicting housing prices because we are predicting a numeric value (a regression problem)
 
 
 ### Results
@@ -58,6 +59,11 @@ suggested next step that could make it better.
 
 ### References
 
-All of the links
+MEDIUM.COM, Learning Data Science: Day 9 - Linear Regression on Boston Housing Dataset https://medium.com/@haydar_ai/learning-data-science-day-9-linear-regression-on-boston-housing-dataset-cd62a80775ef, site visited on November 23, 2019.
+
+KAGGLE.COM, Boston house price prediction https://www.kaggle.com/shreayan98c/boston-house-price-prediction, site visited on November 23, 2019.
+
+TOWARDSDATASCIENCE.COM, Linear Regression on Boston Housing Dataset https://towardsdatascience.com/linear-regression-on-boston-housing-dataset-f409b7e4a155, site visited on November 23, 2019
+
 
 -------
