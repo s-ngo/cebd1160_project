@@ -9,7 +9,7 @@
 ### Resources
 Your repository should include the following:
 
-- Python script for your analysis: `.py`
+- Python script for your analysis: `Boston_prediction.py`
 - Results figure/saved file:  `figures/`
 - Dockerfile for your experiment: `Dockerfile`
 - runtime-instructions in a file named RUNME.md
