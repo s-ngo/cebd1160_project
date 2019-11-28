@@ -17,20 +17,15 @@
 
 ## Research Question
 
-Using the Boston Housing Dataset, can we build a machine learning model to predict the value of a house?
+Using the Boston Housing Dataset, can we build a machine learning model to predict the value of a house ?
 
 ### Abstract
 
-4 sentence longer explanation about your research question. Include:
-
-opportunity (what data do we have)
-challenge (what is the "problem" we could solve with this dataset)
-action (how will we try to solve this problem/answer this question)
-resolution (what did we end up producing)
-
-With the Boston Housing dataset
-
-The Boston housing
+We have the Boston Housing dataset, a well known toy dataset from 1978 with 506 samples with 13 features of homes as well as the price.
+Using this dataset, we can attempt to train a machine learning model to predict the price of a house based on certain given variables. 
+Firstly, thought data exploration, we verify the integrity of the dataset and the correlation between a variable versus the median value of a home (MDEV). 
+Secondly, finding that some variables are correlated, we trained and tested a linear regression model to predict the price. 
+With the results of the chosen estimator (GradientsBoostingRegression), we concluded that the results are not strong enough to use as a machine learning prediction. 
 
 ### Introduction
 
@@ -45,21 +40,13 @@ The Boston dataset for this project originates from the UCI Machine Learning Rep
     - Dropping 14 lines with PRICE = 211.5 because possible false values. [1]
     ![Dristribution Plot of PRICE](figures/boston_displot_PRICE.png)
     - The most correlated features with PRICE that can be used to train our model: RM and LSTAT. A new dataframe created.
+    ![heatmap](figures/boston_heatmap.png)
 - Training the linear regression with different estimators (LinearRegression, Lasso, ElasticNet, GradientBoostingRegressor) and using MSE as the performance metric for predicting house price.
 - Plotting the results of the real vs predicted values.
 
 ### Results
 
-Brief (2 paragraph) description about your results. Include:
-
-At least 1 figure
-At least 1 "value" that summarizes either your data or the "performance" of your method
-A short explanation of both of the above
-
 1. Correlation in the Boston dataset
-
-In the Heatmap, we can see the correlation values between the features and PRICE.
-![heatmap](figures/boston_heatmap.png)
 
 There's is strong positive correlation, as the number of rooms increase, the house price increases.
 ![scatter_RM_to_PRICE](figures/boston_scatter_RM_to_PRICE.png)
@@ -99,7 +86,7 @@ more features
 
 [4] TOWARDSDATASCIENCE.COM, Linear Regression on Boston Housing Dataset https://towardsdatascience.com/linear-regression-on-boston-housing-dataset-f409b7e4a155, site visited on November 23, 2019
 
-https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+[5] SCIKIT-LEARN.ORG, Choosing the right estimator, https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html, site visited on November 23, 2019
 
 
 

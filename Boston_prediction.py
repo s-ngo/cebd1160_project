@@ -24,12 +24,12 @@ boston = load_boston()
 print('Building the Boston data frame and adding "PRICE" column..')
 bostondf = pd.DataFrame(boston.data, columns=boston.feature_names)
 bostondf['PRICE'] = boston.target
-print(bostondf.head())
+# print(bostondf.head())
 
 # To make the price more revelant, I accounted for inflation since 1978,
 # I multiply the PRICE by 423%
 bostondf['PRICE'] = round(bostondf['PRICE'] * 4.23, 2)
-print(bostondf.head())
+# print(bostondf.head())
 
 # Making scatter plots to see all the feature vs PRICE to check correlationS
 print('Creating scatter plots with all the features vs PRICE..')
@@ -54,7 +54,7 @@ plt.close()
 
 sns.distplot(bostondf['PRICE'], bins=30, color='g', label='Distribution of PRICE')
 plt.title('Distribution Plot of PRICE')
-plt.savefig('figures/boston_displot_PRICE.png', dpi=300)
+plt.savefig('figures/boston_displot_PRICE.png')
 plt.clf()
 plt.close()
 
@@ -62,7 +62,7 @@ plt.close()
 # Seeing that we have many values of 50.00 * 4.23 in MDEV,
 # I decided to drop those lines because I found out they might be missing or false values.
 # To ultimately have a better non-skewed result.
-print('After looking at the plots, dropping the lines with MEDV=50.00 because possible false values..')
+print('After looking at the plots, dropping the lines with PRICE = 211.50 because possible false values..')
 indexNames = bostondf[bostondf['PRICE'] == 211.5].index
 print(bostondf[bostondf['PRICE'] == 211.5])
 bostondf.drop(indexNames, inplace=True)
@@ -83,8 +83,8 @@ X_train, X_test, y_train, y_test = train_test_split(correlated_bostondf, bostond
 # I concluded that GradientBoostingRegressor was the best performing
 # lm = LinearRegression()
 # lm = Lasso(random_state=1)
-lm = ElasticNet(random_state=1)
-# lm = GradientBoostingRegressor(random_state=1)
+# lm = ElasticNet(random_state=1)
+lm = GradientBoostingRegressor(random_state=1)
 
 lm.fit(X_train, y_train)
 
@@ -131,3 +131,4 @@ plt.close()
 print(f"Printing MAE error(avg abs residual): {metrics.mean_absolute_error(y_test, predicted_values)}")
 print(f"Printing MSE error: {metrics.mean_squared_error(y_test, predicted_values)}")
 print(f"Printing RMSE error: {np.sqrt(metrics.mean_squared_error(y_test, predicted_values))}")
+print(f"Printing R^2 error: {metrics.r2_score(y_test, predicted_values)}")
