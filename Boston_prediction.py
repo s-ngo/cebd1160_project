@@ -13,7 +13,7 @@ from sklearn import metrics
 print('Loading and building the Boston data frame..')
 from sklearn.datasets import load_boston
 bostonds = load_boston()
-bostondf = pd.DataFrame(bostonds.data, columns= bostonds.feature_names)
+bostondf = pd.DataFrame(bostonds.data, columns=bostonds.feature_names)
 bostondf['MEDV'] = bostonds.target
 print(bostondf)
 # print(bostondf.describe())
@@ -33,6 +33,8 @@ for feature_name in bostondf.columns:
 
 sns.distplot(bostondf['MEDV'], bins=30, color='g', label='Distribution of MEDV')
 plt.savefig('figures/displot_MEDV.png', dpi=300)
+plt.clf()
+plt.close()
 
 # Seeing that we have many values of 50.00 in MDEV,
 # I decided to drop those lines because I found out they might be missing or false values.
@@ -66,7 +68,7 @@ for (real, predicted) in list(zip(y_test, predicted_values)):
     print(f"Value: {real:.2f}, pred: {predicted:.2f}, diff: {(real - predicted):.2f}")
 
 # Plotting the residuals: difference between real and predicted
-sns.set(palette="Spectral")
+sns.set(palette="ocean")
 residuals = y_test - predicted_values
 
 print('Plotting the results..')
@@ -74,6 +76,7 @@ sns.scatterplot(y_test, predicted_values)
 plt.plot([0, 50], [0, 50], '--')
 plt.xlabel('Real Value')
 plt.ylabel('Predicted Value')
+plt.title('Real Value vs Predicted Value plot')
 plots_file = 'figures/' + '/Real_vs_Predicted.' + 'png'
 plt.savefig(plots_file, format=None)
 plt.clf()
@@ -83,6 +86,7 @@ sns.scatterplot(y_test, residuals)
 plt.plot([50, 0], [0, 0], '--')
 plt.xlabel('Real Value')
 plt.ylabel('Residual (difference)')
+plt.title('Real Value vs Residual (difference) plot')
 plots_file = 'figures/' + '/Real_vs_Residual.' + 'png'
 plt.savefig(plots_file, format=None)
 plt.clf()
@@ -100,6 +104,3 @@ plt.close()
 print(f"Printing MAE error(avg abs residual): {metrics.mean_absolute_error(y_test, predicted_values)}")
 print(f"Printing MSE error: {metrics.mean_squared_error(y_test, predicted_values)}")
 print(f"Printing RMSE error: {np.sqrt(metrics.mean_squared_error(y_test, predicted_values))}")
-
-
-
