@@ -62,11 +62,11 @@ plt.close()
 # Seeing that we have many values of 50.00 * 4.23 in MDEV,
 # I decided to drop those lines because I found out they might be missing or false values.
 # To ultimately have a better non-skewed result.
-# print('After looking at the plots, dropping the lines with MEDV=50.00 because possible false values..')
-# indexNames = bostondf[bostondf['PRICE'] == 211.5].index
-# print(bostondf[bostondf['PRICE'] == 211.5])
-# bostondf.drop(indexNames, inplace=True)
-# print(bostondf.shape)
+print('After looking at the plots, dropping the lines with MEDV=50.00 because possible false values..')
+indexNames = bostondf[bostondf['PRICE'] == 211.5].index
+print(bostondf[bostondf['PRICE'] == 211.5])
+bostondf.drop(indexNames, inplace=True)
+print(bostondf.shape)
 
 # After looking at the scatter plots, I see the strongest correlation is between
 # the RM (average number of rooms per dwelling) and the LSTAT (% lower status of the population) features
