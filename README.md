@@ -17,7 +17,7 @@
 
 ## Research Question
 
-Using the Boston Housing Dataset, can we build a machine learning model to predict the value of a house ?
+Using the Boston Housing Dataset, can we build a machine learning model to predict the value of a house?
 
 ### Abstract
 
@@ -29,17 +29,19 @@ With the results of the chosen estimator (GradientsBoostingRegression), we concl
 
 ### Introduction
 
-The Boston dataset for this project originates from the UCI Machine Learning Repository. The Boston housing data was collected in 1978 and each of the 506 entries represent aggregated data about 14 features for homes from various suburbs in Boston, Massachusetts. (Ref. [1]) 
+The Boston dataset for this project originates from the UCI Machine Learning Repository. The Boston housing data was collected in 1978 and each of the 506 entries represent aggregated data about 14 features for homes from various suburbs in Boston, Massachusetts. [1] 
 
 ### Methods
 
-- Starting the project by doing data exploration into the dataset. 
-- As this data was from 1978, I adjusted the price value to account for 1978 to 2019 inflation. [1]
-- For each feature in the dataset, I created scatter graph of the features vs PRICE because we are trying to predict price. A correlation heatmap and PRICE distribution graph was also created.
-- After examining these graphs the following modifications we done : 
-    - Dropping 14 lines with PRICE = 211.5 because possible false values. [1]
+- Data exploration into the dataset and data validation. 
+- Adjusting the price value to account for 1978 to 2019 inflation. [1] [8]
+- Creating a scatter graph of for each feature vs PRICE. Creating a correlation heatmap and PRICE distribution graph.
+- After examining these graphs the following modifications were done : 
+    - Dropping 16 lines with PRICE = 211.5 because possible false values. [1]
+    
     ![Dristribution Plot of PRICE](figures/boston_displot_PRICE.png)
     - The most correlated features with PRICE that can be used to train our model: RM and LSTAT. A new dataframe created.
+   
     ![heatmap](figures/boston_heatmap.png)
 - Training the linear regression with different estimators (LinearRegression, Lasso, ElasticNet, GradientBoostingRegressor) and using MSE as the performance metric for predicting house price.
 - Plotting the results of the real vs predicted values.
@@ -49,6 +51,11 @@ The Boston dataset for this project originates from the UCI Machine Learning Rep
 1. Correlation in the Boston dataset
 
 There's is strong positive correlation, as the number of rooms increase, the house price increases.
+
+<p align="center">
+ <img src="https://github.com/s-ngo/cebd1160_project/blob/master/figures/boston_scatter_RM_to_PRICE.png" title="scatter_RM_to_PRICE">
+</p>
+
 ![scatter_RM_to_PRICE](figures/boston_scatter_RM_to_PRICE.png)
 
 There is a strong negative correlation, as the percentage of lower status of population, the house price decreases.
@@ -88,7 +95,7 @@ more features
 
 [5] SCIKIT-LEARN.ORG, Choosing the right estimator, https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html, site visited on November 23, 2019
 
-
+[6] IN2013DOLLARS.COM, price-inflation calculator, https://www.in2013dollars.com/Boston-Massachusetts/price-inflation, site visited on November 23, 2019
 
 
 -------
