@@ -95,7 +95,7 @@ Conclusion: Based on the lowest MSE, GradientBoostRegressor was the best estimat
 
 ### Discussion
 
-The methods used to optimize our machine learning model did not help enough in building a robust model. This dataset has a few shortcomings, many features are not strongly correlated with price and the data is from 1978. Today's 
+The methods used to optimize our machine learning model did not help enough in building a robust model. This dataset has a few shortcomings, many features are not strongly correlated with price and the data is from 1978.
 
 We suggest that in order to build a better price prediction, either more data is collected or more home features added to the dataset. This dataset does not include some key features that would affect the price of a home (year built, square footage, garage, pool, proximity to public transport)
 
